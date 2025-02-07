@@ -5,5 +5,9 @@
 export const bootstrap = async () => {
   const { worker } = await import('./api-mocks/browser');
 
-  return worker.start();
+  return worker.start({
+    serviceWorker: {
+      url: '/mockServiceWorker.js',
+    },
+  });
 };
