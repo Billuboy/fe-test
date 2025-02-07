@@ -16,7 +16,8 @@ export function People() {
   if (!people.length) return <p>No People Available.</p>;
 
   return (
-    <PeopleTableProvider data={people}>
+    <PeopleTableProvider
+      data={people.toSorted((a, b) => a.name.localeCompare(b.name))}>
       <PeopleTable />
     </PeopleTableProvider>
   );
