@@ -1,9 +1,7 @@
-import { useState } from 'react';
+import type { Person } from '../model';
 
-import type { Person } from './model';
-
-import './people.css';
-import { usePeopleTable } from './hooks/usePeopleTable';
+import '../styles/people.css';
+import { usePeopleTable } from '../hooks/usePeopleTable';
 
 function TableRow({ name, show, actor, movies, dob }: Person) {
   return (
@@ -37,18 +35,19 @@ export default function PeopleTable() {
   return (
     <div>
       <input
-        type='text'
-        role='textbox'
-        aria-label='Search'
+        type="text"
+        role="textbox"
+        aria-label="Search"
         value={filterText}
-        onChange={e => filterPeople(e.target.value)}
+        onChange={(e) => filterPeople(e.target.value)}
       />
       <table>
         <thead>
           <tr>
             <th
               aria-sort={sortOrder === 1 ? 'ascending' : 'descending'}
-              onClick={sortPeople}>
+              onClick={sortPeople}
+            >
               Name
             </th>
             <th>Show</th>
@@ -66,12 +65,13 @@ export default function PeopleTable() {
       </table>
       <div>
         <select
-          name='combobox'
+          name="combobox"
           value={batch}
-          onChange={e => changeBatchSize(+e.target.value)}>
-          <option value='10'>10</option>
-          <option value='15'>15</option>
-          <option value='20'>20</option>
+          onChange={(e) => changeBatchSize(+e.target.value)}
+        >
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
         </select>
         <p>
           Showing {(page - 1) * batch + 1}-{page * batch} of 100
@@ -88,7 +88,8 @@ export default function PeopleTable() {
           </button>
           <button
             onClick={() => jumpToLastPage()}
-            disabled={page === totalPages}>
+            disabled={page === totalPages}
+          >
             Last
           </button>
         </div>

@@ -1,6 +1,6 @@
 import { usePeopleQuery } from './query';
 import PeopleTableProvider from './context/PeopleTableContext';
-import PeopleTable from './PeopleTable.component';
+import PeopleTable from './components/PeopleTable.component';
 
 export function People() {
   const { data: people, loading, error } = usePeopleQuery();
@@ -17,7 +17,8 @@ export function People() {
 
   return (
     <PeopleTableProvider
-      data={people.toSorted((a, b) => a.name.localeCompare(b.name))}>
+      data={people.toSorted((a, b) => a.name.localeCompare(b.name))}
+    >
       <PeopleTable />
     </PeopleTableProvider>
   );

@@ -1,8 +1,8 @@
-import DfhLogo from "../assets/logo.svg";
-import { People } from "./modules/people";
-import { AxiosProvider } from "./shared/context";
+import DfhLogo from '../assets/logo.svg';
+import { People } from './modules/people';
+import { AxiosProvider } from './shared/context';
 
-import "./app.css";
+import './app.css';
 
 export function App() {
   return (

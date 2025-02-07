@@ -1,0 +1,23 @@
+name: Frontend action
+on: workflow_dispatch
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node setup
+        uses: actions/setup-node@v4
+
+      - name: Installing packages
+        run: yarn install
+
+      - name: Lint
+        run: yarn lint:js && yarn check-format
+
+      - name: Test
+        run: yarn test:non-ui
+
+      - name: Build
+        run: npm run build

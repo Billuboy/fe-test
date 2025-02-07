@@ -4,3 +4,5 @@
 //   undefined,
 //   process.env.NODE_ENV !== "test" ? [context.delay(500)] : []
 // );
+
+export const NUMBER = 1;

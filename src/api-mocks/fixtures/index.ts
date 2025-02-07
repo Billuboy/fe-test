@@ -1,1 +1,1 @@
-export * from "./people.fixture";
+export * from './people.fixture';

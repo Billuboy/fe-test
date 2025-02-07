@@ -37,15 +37,15 @@ export default function PeopleTableProvider({ children, data }: Props) {
   const people = useMemo(
     () =>
       data
-        .filter(p => p.name.toLowerCase().includes(filterText.toLowerCase()))
+        .filter((p) => p.name.toLowerCase().includes(filterText.toLowerCase()))
         .toSorted((a, b) => sortOrder * a.name.localeCompare(b.name))
         .slice((page - 1) * batch, page * batch),
     [data, sortOrder, batch, page, filterText],
   );
 
-  const incPage = () => setPage(p => p + 1);
+  const incPage = () => setPage((p) => p + 1);
 
-  const decPage = () => setPage(p => (p === 1 ? 1 : p - 1));
+  const decPage = () => setPage((p) => (p === 1 ? 1 : p - 1));
 
   const jumpToFirstPage = () => setPage(1);
 
@@ -53,7 +53,7 @@ export default function PeopleTableProvider({ children, data }: Props) {
 
   const changeBatchSize = (size: number) => setBatch(size);
 
-  const sortPeople = () => setSortOrder(s => (s === 1 ? -1 : 1));
+  const sortPeople = () => setSortOrder((s) => (s === 1 ? -1 : 1));
 
   const filterPeople = (text: string) => setFilterText(text);
 

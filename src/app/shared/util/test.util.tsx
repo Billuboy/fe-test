@@ -1,11 +1,11 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode } from 'react';
 import {
   render,
   screen,
   waitForElementToBeRemoved,
-} from "@testing-library/react";
+} from '@testing-library/react';
 
-import { AxiosProvider } from "../context";
+import { AxiosProvider } from '../context';
 
 interface DefaultTestProvidersProps {
   children: ReactNode;
@@ -18,5 +18,5 @@ const DefaultTestProviders = ({ children }: DefaultTestProvidersProps) => (
 export const renderWithProviders = (ui: ReactElement) =>
   render(<DefaultTestProviders>{ui}</DefaultTestProviders>);
 
-export const waitForLoading = async (loadingText = "Fetching") =>
+export const waitForLoading = async (loadingText = 'Fetching') =>
   waitForElementToBeRemoved(() => screen.getByText(`${loadingText}...`));

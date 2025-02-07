@@ -1,1 +1,1 @@
-export * from "./people.query";
+export * from './people.query';

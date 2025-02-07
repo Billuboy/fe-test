@@ -1,2 +1,2 @@
-export * from "./model";
-export * from "./people.component";
+export * from './model';
+export * from './people.component';
