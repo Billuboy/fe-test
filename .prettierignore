@@ -2,3 +2,5 @@ node_modules
 .husky
 .next
 out
+public/mockServiceWorker.js
+src/mockServiceWorker.js
