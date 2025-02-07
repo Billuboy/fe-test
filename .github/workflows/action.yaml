@@ -6,18 +6,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Node setup
         uses: actions/setup-node@v4
-
       - name: Installing packages
         run: yarn install
-
       - name: Lint
         run: yarn lint:js && yarn check-format
 
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Node setup
+        uses: actions/setup-node@v4
+      - name: Installing packages
+        run: yarn install
       - name: Test
         run: yarn test:non-ui
 
+  build:
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Node setup
+        uses: actions/setup-node@v4
+      - name: Installing packages
+        run: yarn install
       - name: Build
-        run: npm run build
+        run: yarn build

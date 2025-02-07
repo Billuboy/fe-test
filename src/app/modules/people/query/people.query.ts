@@ -21,7 +21,6 @@ export const usePeopleQuery = (): PeopleQueryState => {
 
       setState({ data, loading: false, error: undefined });
     } catch (error) {
-      console.log(error);
       setState({ data: undefined, error: error as AxiosError, loading: false });
     }
   };
