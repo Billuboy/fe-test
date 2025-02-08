@@ -29,10 +29,12 @@
 
 table {
   width: 100%;
+  border: none;
 }
 
 thead th {
-  padding: 0.5rem 0;
+  padding: 0.5rem;
+  text-align: left;
 }
 
 button.name-sort {
@@ -45,14 +47,29 @@ button.name-sort {
   font-size: 16px;
   font-weight: 600;
   padding: 0;
+  cursor: pointer;
 }
 
-th {
-  text-align: left;
+.table-body > tr {
+  border-bottom: 1px solid #eee;
 }
 
 .table-body > tr > td {
-  padding: 0.5rem 0;
+  padding: 0.75rem 0.5rem;
+}
+
+.table-body > tr > td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.table-body > tr > td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.table-body > tr:nth-child(2n) {
+  background-color: #aaa;
 }
 
 .table-nav {

@@ -47,7 +47,7 @@ export default function PeopleTable() {
           onChange={(e) => filterPeople(e.target.value)}
         />
       </div>
-      <table>
+      <table cellSpacing="0" cellPadding="0">
         <thead>
           <tr>
             <th
