@@ -1,3 +1,5 @@
+import type { Person } from './model';
+
 import { usePeopleQuery } from './query';
 import PeopleTableProvider from './context/PeopleTableContext';
 import PeopleTable from './components/PeopleTable.component';
@@ -17,7 +19,9 @@ export function People() {
 
   return (
     <PeopleTableProvider
-      data={people.toSorted((a, b) => a.name.localeCompare(b.name))}
+      data={[...people].sort((a: Person, b: Person) =>
+        a.name.localeCompare(b.name),
+      )}
     >
       <PeopleTable />
     </PeopleTableProvider>

@@ -36,9 +36,11 @@ export default function PeopleTableProvider({ children, data }: Props) {
 
   const people = useMemo(
     () =>
-      data
+      [...data]
         .filter((p) => p.name.toLowerCase().includes(filterText.toLowerCase()))
-        .toSorted((a, b) => sortOrder * a.name.localeCompare(b.name))
+        .sort(
+          (a: Person, b: Person) => sortOrder * a.name.localeCompare(b.name),
+        )
         .slice((page - 1) * batch, page * batch),
     [data, sortOrder, batch, page, filterText],
   );

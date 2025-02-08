@@ -1,7 +1,94 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.search label {
+  font-size: 14px;
+}
+
+.search input {
+  width: 300px;
+  font-size: 16px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid #eee;
+}
+
+.search input:focus {
+  outline: none;
+}
+
 table {
   width: 100%;
 }
 
+thead th {
+  padding: 0.5rem 0;
+}
+
+button.name-sort {
+  width: 100%;
+  background-color: transparent;
+  border: 0px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0;
+}
+
 th {
   text-align: left;
+}
+
+.table-body > tr > td {
+  padding: 0.5rem 0;
+}
+
+.table-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page-info p {
+  font-size: 12px;
+}
+
+.page-info select {
+  width: 100px;
+  padding: 0.25rem 0;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.nav-buttons button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+.nav-buttons button:disabled {
+  cursor: not-allowed;
 }
