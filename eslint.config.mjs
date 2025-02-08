@@ -5,12 +5,7 @@ export default tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.recommended,
   {
-    ignores: [
-      'node_modules',
-      '.husky',
-      '.next',
-      'out',
-    ],
+    ignores: ['node_modules', '.husky', '.next', 'out'],
   },
   {
     rules: {
